@@ -41,15 +41,57 @@ document.addEventListener('DOMContentLoaded', function () {
     revealEls.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
-  /* ---- Garde-fou : avertir si les liens Stripe ne sont pas configurés ---- */
-  document.querySelectorAll('[data-stripe]').forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-      var href = btn.getAttribute('href') || '';
-      if (href.indexOf('REMPLACER') !== -1) {
-        e.preventDefault();
-        alert('Lien de paiement Stripe à configurer.\n\nRemplace l\'attribut href de ce bouton (data-stripe="' +
-          btn.getAttribute('data-stripe') + '") par ton Stripe Payment Link dans index.html.');
+  /* =================================================================
+     STRIPE CHECKOUT (intégré via le back-end)
+     -----------------------------------------------------------------
+     Chaque offre est reliée à un "Price ID" Stripe (commence par price_).
+     Récupère-les dans ton Dashboard Stripe → Produits, puis colle-les ici.
+     Le bouton appelle le back-end (server.js) qui crée une session de
+     paiement sécurisée et redirige le client vers Stripe Checkout.
+     ================================================================= */
+  var STRIPE_CONFIG = {
+    // offre  ->  Price ID Stripe
+    declic:       'REMPLACER_PRICE_ID_DECLIC',
+    acceleration: 'REMPLACER_PRICE_ID_ACCELERATION',
+    liberte:      'REMPLACER_PRICE_ID_LIBERTE'
+  };
+  // Endpoint du back-end qui crée la session Checkout (voir server.js)
+  var CHECKOUT_ENDPOINT = '/create-checkout-session';
+
+  document.querySelectorAll('[data-checkout]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var offer = btn.getAttribute('data-checkout');
+      var priceId = STRIPE_CONFIG[offer];
+
+      if (!priceId || priceId.indexOf('REMPLACER') !== -1) {
+        alert('Paiement à configurer.\n\nRenseigne le Price ID Stripe de l\'offre "' + offer +
+          '" dans script.js (objet STRIPE_CONFIG), et lance le back-end (server.js).');
+        return;
       }
+
+      var original = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Redirection…';
+
+      fetch(CHECKOUT_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ priceId: priceId, offer: offer })
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data && data.url) {
+            window.location.href = data.url; // redirection vers Stripe Checkout
+          } else {
+            throw new Error(data && data.error ? data.error : 'Réponse invalide du serveur');
+          }
+        })
+        .catch(function (err) {
+          alert('Le paiement n\'a pas pu démarrer.\n\n' + err.message +
+            '\n\nVérifie que le back-end (server.js) tourne et que ta clé Stripe est configurée.');
+          btn.disabled = false;
+          btn.textContent = original;
+        });
     });
   });
 

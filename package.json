@@ -1,0 +1,19 @@
+{
+  "name": "level-up-landing",
+  "version": "1.0.0",
+  "description": "Landing page Level Up (Jérémie Laborde) avec Stripe Checkout intégré",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["landing", "stripe", "checkout", "coaching"],
+  "author": "Jérémie Laborde",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "stripe": "^16.2.0"
+  }
+}

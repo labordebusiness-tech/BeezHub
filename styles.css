@@ -399,6 +399,7 @@ a { color: inherit; text-decoration: none; }
 .price { display: flex; align-items: baseline; gap: 6px; margin-bottom: 26px; }
 .price .amount { font-family: 'Sora', sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--gold-soft); }
 .price .period { color: var(--text-dim); font-size: 0.9rem; }
+.price-sub { color: var(--text-dim); font-size: 0.85rem; margin: -16px 0 22px; }
 .price-card .check-list { margin-bottom: 30px; flex: 1; }
 .price-card .btn { margin-top: auto; }
 .pricing-note { text-align: center; color: var(--text-dim); font-size: 0.9rem; margin-top: 34px; }

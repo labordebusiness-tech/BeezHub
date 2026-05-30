@@ -1,7 +1,7 @@
 # Level Up — Landing page
 
 Landing page d'acquisition client pour **Level Up**, le programme d'accompagnement de
-**Jérémy Laborde** (entrepreneuriat · investissement immobilier · mindset).
+**Jérémie Laborde** (entrepreneuriat · investissement immobilier · mindset).
 
 Page en **HTML / CSS / JS pur** — aucune installation, aucun build. Il suffit d'ouvrir
 `index.html` dans un navigateur, ou de l'héberger (GitHub Pages, Netlify, Vercel, OVH…).
