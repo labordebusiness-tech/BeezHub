@@ -1,7 +1,7 @@
 # Level Up — Landing page
 
-Landing page d'acquisition client pour **Level Up**, le programme d'accompagnement de
-**Jérémie Laborde** (entrepreneuriat · investissement immobilier · mindset).
+Landing page d'acquisition client pour **Level Up**, le programme d'accompagnement
+en entrepreneuriat, investissement immobilier & mindset (compte&nbsp;: **@Jay.WhodaresWins**).
 
 - **Front** : HTML / CSS / JS pur — léger, rapide, hébergeable partout.
 - **Paiement** : **Stripe Checkout intégré** via un petit back-end Node/Express (`server.js`),
@@ -66,7 +66,11 @@ Tu peux les modifier dans `index.html` (section `#tarifs`) — pense à mettre �
 prix correspondant dans Stripe.
 
 ### 4. Ton Instagram
-Dans le `footer` de `index.html`, vérifie le lien `https://instagram.com/j.where.there.wins`.
+Le compte affiché est **@Jay.WhodaresWins** (`https://instagram.com/Jay.WhodaresWins`),
+présent dans le `footer` et dans la carte « Mindset » de `index.html`. Vérifie l'URL exacte.
+
+> 🔒 Confidentialité : aucun nom réel n'apparaît sur le site. La marque mise en avant est
+> **Level Up**, et la seule signature est **@Jay.WhodaresWins**.
 
 ### 5. (Optionnel) Image de partage
 Ajoute `og-image.jpg` (1200×630) à la racine pour un bel aperçu lors des partages.

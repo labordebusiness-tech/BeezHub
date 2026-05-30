@@ -355,6 +355,8 @@ a { color: inherit; text-decoration: none; }
 }
 .mindset-author strong { display: block; }
 .mindset-author span { font-size: 0.85rem; color: var(--text-dim); }
+.mindset-author a { font-size: 0.85rem; color: var(--gold-soft); }
+.mindset-author a:hover { text-decoration: underline; }
 
 /* ----------------------- Pricing ----------------------- */
 .pricing-grid {
