@@ -51,9 +51,9 @@ document.addEventListener('DOMContentLoaded', function () {
      ================================================================= */
   var STRIPE_CONFIG = {
     // offre  ->  Price ID Stripe
-    declic:       'REMPLACER_PRICE_ID_DECLIC',
-    acceleration: 'REMPLACER_PRICE_ID_ACCELERATION',
-    liberte:      'REMPLACER_PRICE_ID_LIBERTE'
+    declic:       'REMPLACER_PRICE_ID_DECLIC',       // Déclic — 275 € / 1h
+    acceleration: 'REMPLACER_PRICE_ID_ACCELERATION', // Accélération — 2 900 € / 30 jours
+    businesspro:  'REMPLACER_PRICE_ID_BUSINESSPRO'   // Business Pro — 12 000 € / an
   };
   // Endpoint du back-end qui crée la session Checkout (voir server.js)
   var CHECKOUT_ENDPOINT = '/create-checkout-session';

@@ -37,31 +37,30 @@ secours juste en dessous). Tant que ce n'est pas fait, un encart "Calendly à co
 
 ### 2. Paiement Stripe (Checkout intégré)
 1. Dans ton **Dashboard Stripe → Produits**, crée 3 produits avec un prix (un *Price*) :
-   - Déclic — 297 €
-   - Accélération — 1 497 €
-   - Liberté — 2 997 €
+   - Déclic — 275 €
+   - Accélération — 2 900 €
+   - Business Pro — 12 000 €
 2. Copie chaque **Price ID** (commence par `price_…`) dans `script.js`, objet `STRIPE_CONFIG` :
    ```js
    var STRIPE_CONFIG = {
      declic:       'price_xxxxxxxxxxxx',
      acceleration: 'price_xxxxxxxxxxxx',
-     liberte:      'price_xxxxxxxxxxxx'
+     businesspro:  'price_xxxxxxxxxxxx'
    };
    ```
 3. Mets ta **clé secrète** Stripe dans `.env` (`STRIPE_SECRET_KEY`).
 
-> 💡 Les mentions « ou en 3× » sont indicatives. Pour le paiement en plusieurs fois,
-> utilise les options de Stripe ou crée un Price d'abonnement et passe `mode` à
-> `'subscription'` dans `server.js`.
+> 💡 Business Pro est un suivi annuel : tu peux le vendre en paiement unique (mode `payment`,
+> par défaut) ou en abonnement mensuel — dans ce cas crée un Price récurrent dans Stripe et
+> passe `mode` à `'subscription'` dans `server.js`.
 
-### 3. Les tarifs (proposés — à ajuster librement)
+### 3. Les tarifs
 | Offre | Prix | Pour qui |
 |-------|------|----------|
-| **Déclic** | 297 € / session | Clarifier son projet, première mise en mouvement |
-| **Accélération** ⭐ | 1 497 € / programme | Passer à l'action et scaler (offre la plus choisie) |
-| **Liberté** | 2 997 € / programme | Pros : développement, rentabilité, sortie d'opérationnel |
+| **Déclic** | 275 € / session 1h | Clarifier son projet, débloquer la suite |
+| **Accélération** ⭐ | 2 900 € / 30 jours intensifs | Passer à l'action et scaler (offre la plus choisie) |
+| **Business Pro** | 12 000 € / an | Pros : développement, rentabilité, sortie d'opérationnel |
 
-Ces prix sont un point de départ cohérent pour un accompagnement premium en France.
 Tu peux les modifier dans `index.html` (section `#tarifs`) — pense à mettre à jour le
 prix correspondant dans Stripe.
 
@@ -95,7 +94,7 @@ Ajoute `og-image.jpg` (1200×630) à la racine pour un bel aperçu lors des part
 2. **Pour qui** — 2 personas : *Débutant* et *Pro*
 3. **La méthode** — 4 étapes (appel → diagnostic → action → résultats)
 4. **Mindset** — développement personnel inclus
-5. **Tarifs** — 3 offres (Déclic / Accélération / Liberté) avec paiement Stripe Checkout
+5. **Tarifs** — 3 offres (Déclic / Accélération / Business Pro) avec paiement Stripe Checkout
 6. **Témoignages** — emplacements à remplir
 7. **FAQ**
 8. **Contact** — widget Calendly
