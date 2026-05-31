@@ -1,0 +1,19 @@
+# Déploiement "1 clic" sur Render (https://render.com)
+# 1. Pousse ce dépôt sur GitHub
+# 2. Sur Render : New + → Blueprint → sélectionne ce repo
+# 3. Render lit ce fichier et crée le service automatiquement
+# 4. Renseigne les variables d'environnement marquées sync:false (clé Stripe, domaine)
+services:
+  - type: web
+    name: level-up
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: STRIPE_SECRET_KEY
+        sync: false            # à coller dans le dashboard Render (sk_live_... ou sk_test_...)
+      - key: DOMAIN
+        sync: false            # ex: https://level-up.onrender.com
+      - key: NODE_VERSION
+        value: 20
