@@ -59,6 +59,42 @@
         <li><strong>100&nbsp;%</strong><span>Plan d'action sur-mesure</span></li>
         <li><strong>Mindset</strong><span>Développement personnel inclus</span></li>
       </ul>
+
+      <div class="hero-visual reveal" aria-hidden="true">
+        <svg viewBox="0 0 600 260" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="lvUpFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#d4af37" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="lvUpLine" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#b8932b"/>
+              <stop offset="100%" stop-color="#e7c860"/>
+            </linearGradient>
+          </defs>
+          <!-- grille -->
+          <g stroke="rgba(255,255,255,0.06)" stroke-width="1">
+            <line x1="40" y1="40" x2="560" y2="40"/>
+            <line x1="40" y1="100" x2="560" y2="100"/>
+            <line x1="40" y1="160" x2="560" y2="160"/>
+            <line x1="40" y1="220" x2="560" y2="220"/>
+          </g>
+          <!-- aire sous la courbe -->
+          <path d="M40 210 L150 185 L260 195 L370 130 L480 90 L560 40 L560 220 L40 220 Z" fill="url(#lvUpFill)"/>
+          <!-- courbe de croissance -->
+          <path class="hero-line" d="M40 210 L150 185 L260 195 L370 130 L480 90 L560 40" fill="none" stroke="url(#lvUpLine)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- points -->
+          <g fill="#e7c860">
+            <circle cx="40" cy="210" r="5"/><circle cx="150" cy="185" r="5"/><circle cx="260" cy="195" r="5"/>
+            <circle cx="370" cy="130" r="5"/><circle cx="480" cy="90" r="5"/>
+            <circle cx="560" cy="40" r="7" fill="#fff" stroke="#e7c860" stroke-width="3"/>
+          </g>
+          <!-- étiquettes -->
+          <text x="40" y="248" fill="#a7adba" font-size="13" font-family="Inter,sans-serif">Idée</text>
+          <text x="335" y="248" fill="#a7adba" font-size="13" font-family="Inter,sans-serif">Action</text>
+          <text x="505" y="248" fill="#e7c860" font-size="13" font-weight="600" font-family="Inter,sans-serif">Liberté</text>
+        </svg>
+      </div>
     </div>
     <div class="hero-glow" aria-hidden="true"></div>
   </section>
@@ -89,6 +125,9 @@
       <div class="persona-grid">
         <article class="persona-card reveal">
           <div class="persona-tag">Profil 01</div>
+          <div class="persona-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5.76.76 1.23 1.52 1.41 2.5"/></svg>
+          </div>
           <h3>Tu débutes</h3>
           <p class="persona-intro">Tu as une idée, une envie, une ambition… mais tu ne sais pas par où commencer.</p>
           <ul class="check-list">
@@ -102,6 +141,9 @@
 
         <article class="persona-card highlight reveal">
           <div class="persona-tag">Profil 02</div>
+          <div class="persona-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+          </div>
           <h3>Tu es déjà pro</h3>
           <p class="persona-intro">Entrepreneur, investisseur, immobilier, marchand de biens… tu es lancé, tu veux passer un cap.</p>
           <ul class="check-list">
@@ -128,21 +170,25 @@
       <div class="steps">
         <div class="step reveal">
           <div class="step-num">1</div>
+          <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
           <h3>Appel découverte</h3>
           <p>On fait connaissance, on clarifie ta situation et ton objectif. On vérifie qu'on est faits pour avancer ensemble.</p>
         </div>
         <div class="step reveal">
           <div class="step-num">2</div>
+          <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
           <h3>Diagnostic & stratégie</h3>
           <p>Point de situation complet, on identifie les leviers et on construit ta feuille de route personnalisée.</p>
         </div>
         <div class="step reveal">
           <div class="step-num">3</div>
+          <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           <h3>Passage à l'action</h3>
           <p>On exécute, étape par étape. Tu avances avec un cadre, des actions précises et un suivi régulier.</p>
         </div>
         <div class="step reveal">
           <div class="step-num">4</div>
+          <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
           <h3>Résultats & liberté</h3>
           <p>Rentabilité, croissance, sérénité. On ajuste pour que tu gardes le contrôle et gagnes en liberté.</p>
         </div>

@@ -27,6 +27,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ---- Animation d'apparition au scroll ---- */
   var revealEls = document.querySelectorAll('.reveal');
+
+  function revealAll() {
+    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -35,10 +40,22 @@ document.addEventListener('DOMContentLoaded', function () {
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
     revealEls.forEach(function (el) { io.observe(el); });
+
+    // Filet de sécurité : si pour une raison quelconque l'observateur ne se
+    // déclenche pas (certains navigateurs, file://, contenu déjà à l'écran…),
+    // on révèle tout après un court délai pour ne JAMAIS masquer de contenu.
+    setTimeout(revealAll, 1500);
+    // Au cas où la page est ouverte directement vers une ancre / déjà scrollée
+    window.addEventListener('load', function () {
+      revealEls.forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('is-visible');
+      });
+    });
   } else {
-    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+    revealAll();
   }
 
   /* =================================================================
