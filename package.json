@@ -7,7 +7,12 @@
     "start": "node server.js",
     "dev": "node server.js"
   },
-  "keywords": ["landing", "stripe", "checkout", "coaching"],
+  "keywords": [
+    "landing",
+    "stripe",
+    "checkout",
+    "coaching"
+  ],
   "author": "Level Up",
   "license": "UNLICENSED",
   "private": true,
