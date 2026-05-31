@@ -12,3 +12,7 @@ npm-debug.log*
 # OS
 .DS_Store
 Thumbs.db
+
+# Aperçus / artefacts générés (non versionnés)
+LevelUp-apercu.html
+preview-*.png
